@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import {PostImage} from "./containers/news/postImage";
+import {NewsContainer} from "./containers/news/newsContainer";
+
+const post = {
+    imageSrc: "https://bit.ly/3ruwQgH",
+    imageTitle: "Ubuntu",
+    imageAlt: undefined,
+    postTitle: "My title",
+    postText: "lorem ipsum dolor sit amet, consectetur adipisicing elit,\n" +
+        "            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
+        "            ut enim ad minim veniam, quis nostrud exercitation ullamco\n" +
+        "            laboris nisi ut aliquip ex ea commodo consequat. duis aute\n" +
+        "            irure dolor in reprehenderit in voluptate velit esse cillum\n" +
+        "            dolore eu fugiat nulla pariatur. excepteur sint occaecat cupidatat\n" +
+        "            non proident, sunt in culpa qui officia deserunt mollit anim id\n" +
+        "            est laborum.",
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="news-post">
+        <PostImage src={post.imageSrc} title={post.imageTitle} alt={post.imageAlt} />
+          <NewsContainer title={post.postTitle} text={post.postText} />
+      </div>
     </div>
   );
 }
